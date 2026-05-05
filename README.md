@@ -250,27 +250,6 @@ Depois acesse:
 http://localhost:8000
 ```
 
----
-
-## 10. Como publicar no GitHub Pages
-
-1. Crie um repositório no GitHub.
-2. Envie os arquivos `index.html`, `style.css` e `app.js` para a raiz do repositório.
-3. Acesse as configurações do repositório.
-4. Entre em **Settings > Pages**.
-5. Em **Build and deployment**, selecione:
-
-```text
-Deploy from a branch
-```
-
-6. Escolha a branch principal, geralmente `main`, e a pasta `/root`.
-7. Salve a configuração.
-
-Após alguns instantes, o GitHub Pages fornecerá uma URL pública para acesso ao sistema.
-
----
-
 ## 11. Usuários de demonstração
 
 O sistema possui usuários fictícios para fins de teste.
