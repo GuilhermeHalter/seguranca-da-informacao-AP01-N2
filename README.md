@@ -225,7 +225,7 @@ O objetivo não é transformar este protótipo em um sistema profissional comple
 ---
 
 
-## 11. Usuários de demonstração
+## 9. Usuários de demonstração
 
 O sistema possui usuários fictícios para fins de teste.
 
@@ -235,7 +235,7 @@ Esses usuários existem apenas para permitir a navegação pela aplicação dura
 
 ---
 
-## 12. Atividade proposta
+## 10. Atividade proposta
 
 A atividade consiste em analisar o sistema, propor melhorias e implementar parte delas no código.
 
@@ -252,7 +252,7 @@ O grupo deverá trabalhar em três frentes:
 
 ---
 
-## 13. O que deve ser entregue
+## 11. O que deve ser entregue
 
 Cada grupo deverá entregar:
 
@@ -274,7 +274,7 @@ O relatório deverá conter, no mínimo:
 
 ---
 
-## 14. Tabela sugerida para o relatório
+## 12. Tabela sugerida para o relatório
 
 Use uma tabela semelhante a esta:
 
@@ -298,7 +298,7 @@ Dependeria de infraestrutura
 
 ---
 
-## 15. Perguntas norteadoras
+## 13. Perguntas norteadoras
 
 Durante a análise, o grupo pode se orientar pelas seguintes perguntas:
 
@@ -318,7 +318,7 @@ Essas perguntas não devem ser respondidas de forma genérica. O grupo deve rela
 
 ---
 
-## 16. Critérios de avaliação
+## 14. Critérios de avaliação
 
 A avaliação considerará:
 
@@ -333,7 +333,7 @@ A avaliação considerará:
 
 ---
 
-## 17. Restrições da atividade
+## 15. Restrições da atividade
 
 Durante a atividade:
 
@@ -349,7 +349,7 @@ Melhorias visuais podem ser feitas, mas elas devem estar acompanhadas de melhori
 
 ---
 
-## 18. Observação final
+## 16. Observação final
 
 Este projeto foi construído para provocar análise crítica.
 
