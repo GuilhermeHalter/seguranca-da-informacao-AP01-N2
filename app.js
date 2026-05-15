@@ -91,6 +91,7 @@ const resetBtn = document.querySelector("#resetBtn");
 const searchInput = document.querySelector("#search");
 const roleDisplay = document.querySelector("#roleDisplay");
 const adminActionsCard = document.querySelector("#adminActionsCard");
+const auditSection = document.querySelector("#auditSection");
 
 const sessionBadge = document.querySelector("#sessionBadge");
 const currentUserName = document.querySelector("#currentUserName");
@@ -190,6 +191,11 @@ function showApp(user) {
     adminActionsCard.classList.add("hidden");
   }
 
+  if (user.role === "ADMIN") {
+    auditSection.classList.remove("hidden");
+  } else {
+    auditSection.classList.add("hidden");
+  }
   roleDisplay.value = user.role;
 
   render();
@@ -390,6 +396,11 @@ function render() {
 </td>
     </tr>
   `).join("");
+
+  if (session.role !== "ADMIN") {
+    auditLog.innerHTML = "";
+    return;
+  }
 
   const logs = getAuditLogs();
 
