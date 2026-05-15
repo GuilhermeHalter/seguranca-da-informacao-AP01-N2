@@ -90,6 +90,7 @@ const clearLogsBtn = document.querySelector("#clearLogsBtn");
 const resetBtn = document.querySelector("#resetBtn");
 const searchInput = document.querySelector("#search");
 const roleDisplay = document.querySelector("#roleDisplay");
+const adminActionsCard = document.querySelector("#adminActionsCard");
 
 const sessionBadge = document.querySelector("#sessionBadge");
 const currentUserName = document.querySelector("#currentUserName");
@@ -182,6 +183,13 @@ function showApp(user) {
 
   currentUserName.textContent = user.name;
   currentUserDetails.textContent = `${user.email} | Perfil: ${user.role}`;
+
+  if (user.role === "ADMIN") {
+    adminActionsCard.classList.remove("hidden");
+  } else {
+    adminActionsCard.classList.add("hidden");
+  }
+
   roleDisplay.value = user.role;
 
   render();
@@ -309,8 +317,27 @@ function resetData() {
 }
 
 function render() {
+  const session = getSession();
+
+  if (!session) {
+    return;
+  }
+
   const term = searchInput.value.toLowerCase();
-  const occurrences = getOccurrences();
+
+  let occurrences = getOccurrences();
+
+  if (session.role === "PROFESSOR") {
+    occurrences = occurrences.filter(
+      (item) => item.createdBy === session.email
+    );
+  }
+
+  if (session.role === "ALUNO") {
+    occurrences = occurrences.filter(
+      (item) => item.studentEmail === session.email
+    );
+  }
 
   const filtered = occurrences.filter((item) => {
     const content = JSON.stringify(item).toLowerCase();
