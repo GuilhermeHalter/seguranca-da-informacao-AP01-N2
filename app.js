@@ -344,6 +344,8 @@ function render() {
     return content.includes(term);
   });
 
+  const isAdmin = session.role === "ADMIN";
+
   totalOccurrences.textContent = occurrences.length;
   criticalOccurrences.textContent = occurrences.filter((item) => item.priority === "Crítica").length;
   lastUpdate.textContent = `Atualizado em ${new Date().toLocaleTimeString("pt-BR")}`;
@@ -367,12 +369,25 @@ function render() {
         <strong>Obs. interna:</strong> ${item.internalNote}
       </td>
       <td>
+  ${isAdmin
+      ? `
         <div class="row-actions">
-          <button class="btn secondary" onclick="changeStatus('${item.id}', 'Em análise')">Em análise</button>
-          <button class="btn secondary" onclick="changeStatus('${item.id}', 'Resolvida')">Resolver</button>
-          <button class="btn danger" onclick="deleteOccurrence('${item.id}')">Excluir</button>
+          <button class="btn secondary" onclick="changeStatus('${item.id}', 'Em análise')">
+            Em análise
+          </button>
+
+          <button class="btn secondary" onclick="changeStatus('${item.id}', 'Resolvida')">
+            Resolver
+          </button>
+
+          <button class="btn danger" onclick="deleteOccurrence('${item.id}')">
+            Excluir
+          </button>
         </div>
-      </td>
+      `
+      : `<span class="muted-text">Sem permissão</span>`
+    }
+</td>
     </tr>
   `).join("");
 
